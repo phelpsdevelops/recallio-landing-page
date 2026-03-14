@@ -11,7 +11,11 @@
   "dependencies": {
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "@neondatabase/serverless": "^0.10.0",
+    "drizzle-orm": "^0.38.0",
+    "react-confetti": "^6.1.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
