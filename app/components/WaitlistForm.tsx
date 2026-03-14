@@ -1,26 +1,22 @@
 "use client";
 
 import { useActionState, useEffect, useState } from "react";
-import { submitWaitlistAction, type WaitlistFormState } from "@/app/actions/waitlist";
+import { joinWaitlist, type JoinWaitlistState } from "@/app/actions/joinWaitlist";
 import Confetti from "react-confetti";
 
 interface WaitlistFormProps {
   onSuccess?: () => void;
 }
 
-const initialState: WaitlistFormState = { ok: false };
+const initialState: JoinWaitlistState = { ok: false };
 
 export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
   const [state, formAction, isPending] = useActionState(
-    submitWaitlistAction,
+    joinWaitlist,
     initialState,
   );
   const [email, setEmail] = useState("");
   const [interestReason, setInterestReason] = useState("");
-  const [clientErrors, setClientErrors] = useState<{
-    email?: string;
-    interestReason?: string;
-  }>({});
   const [showSuccess, setShowSuccess] = useState(false);
 
   // When the server action reports success, show overlay and reset form.
@@ -29,36 +25,11 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
       setShowSuccess(true);
       setEmail("");
       setInterestReason("");
-      setClientErrors({});
       if (onSuccess) {
         onSuccess();
       }
     }
   }, [state, onSuccess]);
-
-  const validateClient = () => {
-    const errors: { email?: string; interestReason?: string } = {};
-
-    if (!email.trim()) {
-      errors.email = "Email is required";
-    } else {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email.trim())) {
-        errors.email = "Please enter a valid email address";
-      }
-    }
-
-    if (!interestReason.trim()) {
-      errors.interestReason =
-        "Please share a bit about why you are interested in Recallio";
-    } else if (interestReason.trim().length < 10) {
-      errors.interestReason =
-        "Please share a bit more than a few words so we can learn from your use case";
-    }
-
-    setClientErrors(errors);
-    return Object.keys(errors).length === 0;
-  };
 
   return (
     <section
@@ -83,12 +54,8 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
           </div>
           <div className="relative">
             <form
-              action={(formData) => {
-                if (!validateClient()) return;
-                formAction(formData);
-              }}
+              action={formAction}
               className="relative rounded-2xl border border-zinc-800 bg-zinc-900/80 p-5 shadow-[0_18px_45px_rgba(0,0,0,0.65)]"
-              noValidate
             >
               <div className="space-y-4">
                 <div>
@@ -108,16 +75,6 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
                     placeholder="you@example.com"
                     required
                   />
-                  {clientErrors.email && (
-                    <p className="mt-1 text-xs text-amber-400">
-                      {clientErrors.email}
-                    </p>
-                  )}
-                  {!clientErrors.email && state.ok === false && state.errors?.email && (
-                    <p className="mt-1 text-xs text-amber-400">
-                      {state.errors.email}
-                    </p>
-                  )}
                 </div>
                 <div>
                   <label
@@ -128,7 +85,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
                   </label>
                   <textarea
                     id="interestReason"
-                    name="interestReason"
+                    name="interest_reason"
                     value={interestReason}
                     onChange={(e) => setInterestReason(e.target.value)}
                     rows={4}
@@ -136,21 +93,9 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
                     placeholder="Tell us about how you learn, work, or document things today."
                     required
                   />
-                  {clientErrors.interestReason && (
-                    <p className="mt-1 text-xs text-amber-400">
-                      {clientErrors.interestReason}
-                    </p>
-                  )}
-                  {!clientErrors.interestReason &&
-                    state.ok === false &&
-                    state.errors?.interestReason && (
-                      <p className="mt-1 text-xs text-amber-400">
-                        {state.errors.interestReason}
-                      </p>
-                    )}
                 </div>
-                {state.ok === false && state.errors?.general && (
-                  <p className="text-xs text-rose-400">{state.errors.general}</p>
+                {state.ok === false && state.error && (
+                  <p className="text-xs text-amber-400">{state.error}</p>
                 )}
                 <button
                   type="submit"

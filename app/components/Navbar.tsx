@@ -1,3 +1,5 @@
+"use client";
+
 export function Navbar() {
   return (
     <header className="sticky top-0 z-30 border-b border-zinc-900/5 bg-zinc-950/80 backdrop-blur">

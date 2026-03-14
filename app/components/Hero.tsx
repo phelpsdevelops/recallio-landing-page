@@ -1,8 +1,6 @@
-interface HeroProps {
-  onCtaClick?: () => void;
-}
+"use client";
 
-export function Hero({ onCtaClick }: HeroProps) {
+export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-950 to-zinc-950 pb-16 pt-12 sm:pb-24 sm:pt-16">
       <div className="pointer-events-none absolute inset-x-0 top-[-200px] -z-10 h-[380px] bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.21),_transparent_60%),_radial-gradient(circle_at_top_right,_rgba(34,197,94,0.18),_transparent_55%)]" />
@@ -26,7 +24,10 @@ export function Hero({ onCtaClick }: HeroProps) {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <button
-              onClick={onCtaClick}
+              onClick={() => {
+                const el = document.getElementById("waitlist");
+                el?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
               className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-6 py-2.5 text-sm font-medium text-zinc-950 shadow-lg shadow-emerald-500/40 transition hover:bg-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
             >
               Join the waitlist

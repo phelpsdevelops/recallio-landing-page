@@ -10,16 +10,11 @@ import { WaitlistForm } from "@/app/components/WaitlistForm";
 import { Footer } from "@/app/components/Footer";
 
 export default function Home() {
-  const scrollToWaitlist = () => {
-    const el = document.getElementById("waitlist");
-    el?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-50">
       <Navbar />
       <main>
-        <Hero onCtaClick={scrollToWaitlist} />
+        <Hero />
         <ValuePropositionSection />
         <HowItWorksSection />
         <UseCasesSection />
@@ -30,4 +25,5 @@ export default function Home() {
     </div>
   );
 }
+
 
