@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-white pb-16 pt-12 sm:pb-24 sm:pt-16">
@@ -35,6 +37,31 @@ export function Hero() {
             <p className="text-xs text-zinc-500 sm:text-sm">
               For students, operators, engineers, and anyone who can&apos;t
               afford to forget how things work.
+            </p>
+          </div>
+
+          <div className="mt-2 flex items-center gap-4">
+            <div className="relative h-20 w-28 overflow-hidden rounded-xl border border-zinc-200 bg-zinc-100 shadow-sm shadow-zinc-200">
+              <Image
+                src="/computer.jpg"
+                alt="Person using Recallio on a laptop"
+                fill
+                className="object-cover"
+                sizes="112px"
+              />
+            </div>
+            <div className="relative h-20 w-20 overflow-hidden rounded-xl border border-zinc-200 bg-zinc-100 shadow-sm shadow-zinc-200">
+              <Image
+                src="/phone.jpg"
+                alt="Person using Recallio on a phone"
+                fill
+                className="object-cover"
+                sizes="80px"
+              />
+            </div>
+            <p className="max-w-[150px] text-xs text-zinc-500">
+              Review what you&apos;re learning on your laptop or on your phone
+              in a few focused minutes.
             </p>
           </div>
           <dl className="mt-4 grid grid-cols-2 gap-4 text-xs text-zinc-600 sm:text-sm md:max-w-md">
