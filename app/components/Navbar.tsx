@@ -5,8 +5,12 @@ export function Navbar() {
     <header className="sticky top-0 z-30 border-b border-zinc-900/5 bg-zinc-950/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-emerald-400 text-xs font-semibold text-zinc-950 shadow-sm shadow-emerald-500/40">
-            R
+          <div className="flex h-16 w-16 items-center justify-center rounded-lg">
+            <img
+              src="/logo.svg"
+              alt="Recallio logo"
+              className="h-16 w-16"
+            />
           </div>
           <span className="text-sm font-medium tracking-tight text-zinc-100 sm:text-base">
             Recallio

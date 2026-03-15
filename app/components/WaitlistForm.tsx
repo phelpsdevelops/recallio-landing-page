@@ -34,19 +34,19 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
   return (
     <section
       id="waitlist"
-      className="border-t border-zinc-900 bg-zinc-950 py-16 sm:py-20"
+      className="border-t border-zinc-200 bg-white py-16 sm:py-20"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
           <div className="max-w-xl">
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-50 sm:text-3xl">
+            <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl">
               Be first in line for Recallio.
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-300 sm:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
               Join the early waitlist and help shape a system that helps people
               remember what they learn—from complex systems to simple checklists.
             </p>
-            <ul className="mt-5 space-y-2 text-xs text-zinc-400 sm:text-sm">
+            <ul className="mt-5 space-y-2 text-xs text-zinc-500 sm:text-sm">
               <li>• Early access as we open the private beta.</li>
               <li>• Occasional product updates, no spam.</li>
               <li>• A say in what we prioritize for students, teams, and pros.</li>
@@ -55,13 +55,13 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
           <div className="relative">
             <form
               action={formAction}
-              className="relative rounded-2xl border border-zinc-800 bg-zinc-900/80 p-5 shadow-[0_18px_45px_rgba(0,0,0,0.65)]"
+              className="relative rounded-2xl border border-zinc-200 bg-white p-5 shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
             >
               <div className="space-y-4">
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-xs font-medium text-zinc-200 sm:text-sm"
+                    className="block text-xs font-medium text-zinc-800 sm:text-sm"
                   >
                     Email
                   </label>
@@ -71,7 +71,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="mt-1.5 block w-full rounded-xl border border-zinc-700/80 bg-zinc-900 px-3 py-2 text-sm text-zinc-50 shadow-sm outline-none ring-0 transition placeholder:text-zinc-500 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/60"
+                    className="mt-1.5 block w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-900 shadow-sm outline-none ring-0 transition placeholder:text-zinc-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40"
                     placeholder="you@example.com"
                     required
                   />
@@ -79,7 +79,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
                 <div>
                   <label
                     htmlFor="interestReason"
-                    className="block text-xs font-medium text-zinc-200 sm:text-sm"
+                    className="block text-xs font-medium text-zinc-800 sm:text-sm"
                   >
                     Why are you interested in Recallio?
                   </label>
@@ -89,7 +89,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
                     value={interestReason}
                     onChange={(e) => setInterestReason(e.target.value)}
                     rows={4}
-                    className="mt-1.5 block w-full rounded-xl border border-zinc-700/80 bg-zinc-900 px-3 py-2 text-sm text-zinc-50 shadow-sm outline-none ring-0 transition placeholder:text-zinc-500 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/60"
+                    className="mt-1.5 block w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-900 shadow-sm outline-none ring-0 transition placeholder:text-zinc-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40"
                     placeholder="Tell us about how you learn, work, or document things today."
                     required
                   />
@@ -100,7 +100,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
                 <button
                   type="submit"
                   disabled={isPending}
-                  className="mt-1 inline-flex w-full items-center justify-center rounded-full bg-emerald-400 px-4 py-2.5 text-sm font-medium text-zinc-950 shadow-lg shadow-emerald-500/40 transition hover:bg-emerald-300 disabled:cursor-not-allowed disabled:opacity-80"
+                  className="mt-1 inline-flex w-full items-center justify-center rounded-full bg-indigo-500 px-4 py-2.5 text-sm font-medium text-white shadow-lg shadow-indigo-500/40 transition hover:bg-indigo-600 disabled:cursor-not-allowed disabled:opacity-80"
                 >
                   {isPending ? "Joining waitlist..." : "Join the waitlist"}
                 </button>

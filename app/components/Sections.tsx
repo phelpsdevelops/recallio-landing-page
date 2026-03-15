@@ -23,13 +23,13 @@ export function ValuePropositionSection() {
   ];
 
   return (
-    <section className="bg-zinc-950 py-16 sm:py-20">
+    <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <h2 className="text-balance text-2xl font-semibold tracking-tight text-zinc-50 sm:text-3xl">
+          <h2 className="text-balance text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl">
             Not just another study app.
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-300 sm:text-base">
+          <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
             Recallio combines active recall with documentation so you remember
             concepts, decisions, and workflows—whether you&apos;re preparing
             for an exam, shipping a release, or keeping a team running.
@@ -39,12 +39,12 @@ export function ValuePropositionSection() {
           {items.map((item) => (
             <div
               key={item.title}
-              className="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-5 shadow-[0_16px_40px_rgba(0,0,0,0.55)]"
+              className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-[0_16px_40px_rgba(15,23,42,0.08)]"
             >
-              <h3 className="text-sm font-semibold text-zinc-50 sm:text-base">
+              <h3 className="text-sm font-semibold text-zinc-900 sm:text-base">
                 {item.title}
               </h3>
-              <p className="mt-2 text-xs leading-relaxed text-zinc-300 sm:text-sm">
+              <p className="mt-2 text-xs leading-relaxed text-zinc-600 sm:text-sm">
                 {item.description}
               </p>
             </div>
@@ -82,14 +82,14 @@ export function HowItWorksSection() {
   return (
     <section
       id="how-it-works"
-      className="border-t border-zinc-900 bg-zinc-950 py-16 sm:py-20"
+      className="border-t border-zinc-200 bg-white py-16 sm:py-20"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <h2 className="text-2xl font-semibold tracking-tight text-zinc-50 sm:text-3xl">
+          <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl">
             How Recallio fits into your day.
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-300 sm:text-base">
+          <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
             Designed to feel like a natural extension of how you already take
             notes and document work—without adding more overhead.
           </p>
@@ -98,15 +98,15 @@ export function HowItWorksSection() {
           {steps.map((step) => (
             <li
               key={step.label}
-              className="flex flex-col rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4"
+              className="flex flex-col rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-100"
             >
-              <span className="text-[11px] font-medium uppercase tracking-wide text-emerald-300">
+              <span className="text-[11px] font-medium uppercase tracking-wide text-emerald-700">
                 {step.label}
               </span>
-              <h3 className="mt-2 text-sm font-semibold text-zinc-50 sm:text-base">
+              <h3 className="mt-2 text-sm font-semibold text-zinc-900 sm:text-base">
                 {step.title}
               </h3>
-              <p className="mt-2 text-xs leading-relaxed text-zinc-300 sm:text-sm">
+              <p className="mt-2 text-xs leading-relaxed text-zinc-600 sm:text-sm">
                 {step.body}
               </p>
             </li>
@@ -146,13 +146,13 @@ export function UseCasesSection() {
   ];
 
   return (
-    <section className="border-t border-zinc-900 bg-zinc-950 py-16 sm:py-20">
+    <section className="border-t border-zinc-200 bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <h2 className="text-2xl font-semibold tracking-tight text-zinc-50 sm:text-3xl">
+          <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl">
             Built for anyone who can&apos;t afford to forget.
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-300 sm:text-base">
+          <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
             Recallio is for students, operators, engineers, and solo builders
             alike—anywhere notes, documents, and repeatable processes power real
             work.
@@ -162,16 +162,16 @@ export function UseCasesSection() {
           {useCases.map((uc) => (
             <article
               key={uc.title}
-              className="flex flex-col justify-between rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4"
+              className="flex flex-col justify-between rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-100"
             >
               <div>
-                <span className="inline-flex items-center rounded-full bg-zinc-800/80 px-2.5 py-0.5 text-[11px] font-medium text-zinc-300">
+                <span className="inline-flex items-center rounded-full bg-zinc-100 px-2.5 py-0.5 text-[11px] font-medium text-zinc-700">
                   {uc.badge}
                 </span>
-                <h3 className="mt-3 text-sm font-semibold text-zinc-50 sm:text-base">
+                <h3 className="mt-3 text-sm font-semibold text-zinc-900 sm:text-base">
                   {uc.title}
                 </h3>
-                <p className="mt-2 text-xs leading-relaxed text-zinc-300 sm:text-sm">
+                <p className="mt-2 text-xs leading-relaxed text-zinc-600 sm:text-sm">
                   {uc.description}
                 </p>
               </div>
@@ -218,13 +218,13 @@ export function FeaturePreviewSection() {
   ];
 
   return (
-    <section className="border-t border-zinc-900 bg-zinc-950 py-16 sm:py-20">
+    <section className="border-t border-zinc-200 bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <h2 className="text-2xl font-semibold tracking-tight text-zinc-50 sm:text-3xl">
+          <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl">
             A lightweight workspace for durable learning.
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-300 sm:text-base">
+          <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
             Recallio brings together recall questions, flashcards, and
             documentation so you don&apos;t have to spread your brain across a
             dozen tools.
@@ -234,12 +234,12 @@ export function FeaturePreviewSection() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900/90 via-zinc-900/80 to-zinc-900/40 p-4 shadow-[0_14px_36px_rgba(0,0,0,0.6)]"
+              className="flex flex-col rounded-2xl border border-zinc-200 bg-white p-4 shadow-[0_14px_30px_rgba(15,23,42,0.08)]"
             >
-              <h3 className="text-sm font-semibold text-zinc-50 sm:text-base">
+              <h3 className="text-sm font-semibold text-zinc-900 sm:text-base">
                 {feature.title}
               </h3>
-              <p className="mt-2 text-xs leading-relaxed text-zinc-300 sm:text-sm">
+              <p className="mt-2 text-xs leading-relaxed text-zinc-600 sm:text-sm">
                 {feature.description}
               </p>
             </div>
