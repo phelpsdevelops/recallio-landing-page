@@ -18,19 +18,21 @@ export const metadata: Metadata = {
     "Recallio turns your notes into quizzes and flashcards instantly, helping you study smarter with active recall and spaced repetition.",
   icons: {
     icon: "/icon.svg",
+    apple: "/logo.png"
   },
   openGraph: {
     title: "Recallio",
+    
     description:
       "A system that helps you remember what you learn with active recall and spaced repetition.",
-    images: ["/logo.svg"],
+    images: ["/logo.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Recallio",
     description:
       "Turn notes and docs into active recall sessions, flashcards, and finish-the-statement prompts.",
-    images: ["/logo.svg"],
+    images: ["/logo.png"],
   },
 };
 
