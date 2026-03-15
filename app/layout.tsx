@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Recallio",
     description:
       "Turn notes and docs into active recall sessions, flashcards, and finish-the-statement prompts.",
-    images: ["/logo.png"],
+    images: ["/logo.svg"],
   },
 };
 
